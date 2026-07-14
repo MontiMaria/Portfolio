@@ -119,24 +119,31 @@ span{
     line-height: 1;
 }
 
-.home-img{
+.home-img {
+    width: 400px;  /* El tamaño se define aquí */
+    height: 400px; /* Usar el mismo ancho y alto para que sea un círculo perfecto */
     border-radius: 50%;
-}
-.home-img img{
-    position: relative;
-    top: 3rem;
-    width: 400px;
-    height: 450px; 
-    border-radius: 50%;
+    overflow: hidden; /* Corta cualquier parte de la imagen que se salga del círculo */
     box-shadow: 0 0 25px var(--main-color);
-    cursor: pointer;
     transition: 0.4s ease-in-out;
-    object-fit: cover;
+    cursor: pointer;
 }
-.home-img img:hover{
+
+.home-img:hover {
     box-shadow: 0 0 25px var(--main-color),
                 0 0 50px var(--main-color),
                 0 0 100px var(--main-color);
+}
+
+.home-img img {
+    width: 100%;  /* Se adapta al 100% de los 400px del padre */
+    height: 100%; /* Se adapta al 100% de los 400px del padre */
+    object-fit: cover; /* Evita que la foto se estire o se deforme */
+    transition: 0.5s ease;
+}
+
+.home-img:hover img {
+    transform: scale(1.1);
 }
 
 .home-content p{
